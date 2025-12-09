@@ -8,6 +8,8 @@ import axios from 'axios';
 import Button from '@/components/Button';
 import Card from '@/components/Card';
 import Badge from '@/components/Badge';
+import { toast } from 'react-toastify';
+import ConfirmModal from '@/components/ConfirmModal';
 
 export default function TicketDetailPage() {
   const { user, isAuthenticated, isLoading } = useAuth();
@@ -19,6 +21,7 @@ export default function TicketDetailPage() {
   const [comments, setComments] = useState<IComment[]>([]);
   const [loadingTicket, setLoadingTicket] = useState(true);
   const [error, setError] = useState('');
+  const [showCloseModal, setShowCloseModal] = useState(false);
 
   // Estado para edición
   const [isEditing, setIsEditing] = useState(false);
@@ -121,16 +124,39 @@ export default function TicketDetailPage() {
   };
 
   const handleCloseTicket = async () => {
-    if (confirm('¿Estás seguro de que deseas cerrar este ticket?')) {
+    setShowCloseModal(true);
+  };
+
+  const confirmCloseTicket = async () => {
+    setShowCloseModal(false);
+    
+    const closePromise = async () => {
       try {
         await axios.patch(`/api/tickets/${ticketId}`, {
           status: TicketStatus.CLOSED,
         });
         await fetchTicket();
+        return 'Ticket cerrado exitosamente';
       } catch (err: any) {
-        setError(err.response?.data?.error || 'Error al cerrar el ticket');
+        throw err.response?.data?.error || 'Error al cerrar el ticket';
       }
-    }
+    };
+
+    toast.promise(
+      closePromise(),
+      {
+        pending: 'Cerrando ticket...',
+        success: '✅ Ticket cerrado exitosamente',
+        error: {
+          render({ data }) {
+            return `❌ ${data}`;
+          }
+        }
+      },
+      {
+        position: 'top-center'
+      }
+    );
   };
 
   if (isLoading || loadingTicket) {
@@ -388,6 +414,18 @@ export default function TicketDetailPage() {
           </Card>
         )}
       </main>
+
+      {/* Modal de confirmación para cerrar ticket */}
+      <ConfirmModal
+        isOpen={showCloseModal}
+        title="Cerrar Ticket"
+        message="¿Estás seguro de que deseas cerrar este ticket? Esta acción no se puede deshacer."
+        onConfirm={confirmCloseTicket}
+        onCancel={() => setShowCloseModal(false)}
+        confirmText="🔒 Cerrar Ticket"
+        cancelText="Cancelar"
+        confirmVariant="danger"
+      />
     </div>
   );
 }

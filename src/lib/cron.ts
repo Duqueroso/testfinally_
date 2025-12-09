@@ -94,7 +94,7 @@ export const startCronJobs = () => {
         try {
           await sendEmail({
             to: ticket.clientEmail,
-            subject: 'Tu opinión sobre el soporte recibido - HelpDeskPro',
+            subject: 'Tu opinión sobre el soporte recibido - TuTicketPro',
             html: surveyEmail(
               ticket.clientName,
               ticket._id!.toString(),
@@ -141,11 +141,11 @@ export const startCronJobs = () => {
                 subject: `${unassignedTickets.length} tickets pendientes de asignación`,
                 html: `
                   <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-                    <h2 style="color: #ea580c;">Tickets Pendientes - HelpDeskPro</h2>
+                    <h2 style="color: #ea580c;">Tickets Pendientes - TuTicketPro</h2>
                     <p>Hola ${agent.name},</p>
                     <p>Hay <strong>${unassignedTickets.length} tickets</strong> esperando ser asignados.</p>
                     <p>Por favor, revisa el sistema y asigna los tickets disponibles.</p>
-                    <p style="color: #6b7280; font-size: 14px;">HelpDeskPro - Sistema de Tickets</p>
+                    <p style="color: #6b7280; font-size: 14px;">TuTicketPro - Sistema de Tickets</p>
                   </div>
                 `,
               });

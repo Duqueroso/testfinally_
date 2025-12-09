@@ -67,7 +67,7 @@ export default function DashboardPage() {
         <div className="container mx-auto px-4 py-6">
           <div className="flex justify-between items-center">
             <div className="animate-slide-up">
-              <h1 className="text-4xl font-black text-white mb-2">🎫 HelpDeskPro</h1>
+              <h1 className="text-4xl font-black text-white mb-2">🎫 TuTicketPro</h1>
               <p className="text-sm text-gray-200">
                 👋 Bienvenido, <span className="font-bold">{user.name}</span> <Badge variant="role" value={user.role} className="ml-2 shadow-md" />
               </p>

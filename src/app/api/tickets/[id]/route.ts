@@ -119,7 +119,7 @@ async function patchHandler(req: AuthenticatedRequest, { params }: RouteParams) 
       try {
         await sendEmail({
           to: ticket.clientEmail,
-          subject: 'Ticket Cerrado - HelpDeskPro',
+          subject: 'Ticket Cerrado - TuTicketPro',
           html: ticketClosedEmail(ticket.clientName, id, ticket.title),
         });
       } catch (emailError) {

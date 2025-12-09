@@ -86,7 +86,7 @@ async function postHandler(req: AuthenticatedRequest) {
     try {
       await sendEmail({
         to: user.email,
-        subject: 'Ticket Creado - HelpDeskPro',
+        subject: 'Ticket Creado - TuTicketPro',
         html: ticketCreatedEmail(user.name, newTicket._id!.toString(), title),
       });
     } catch (emailError) {

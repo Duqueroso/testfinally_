@@ -1,4 +1,4 @@
-# HelpDeskPro - Sistema de Gestión de Tickets
+# TuTicketPro - Sistema de Gestión de Tickets
 
 Sistema completo de gestión de tickets de soporte técnico construido con Next.js, TypeScript, MongoDB y Mongoose.
 

@@ -19,7 +19,7 @@ interface EmailOptions {
 export const sendEmail = async ({ to, subject, html }: EmailOptions): Promise<void> => {
   try {
     await transporter.sendMail({
-      from: `"HelpDeskPro" <${process.env.EMAIL_USER}>`,
+      from: `"TuTicketPro" <${process.env.EMAIL_USER}>`,
       to,
       subject,
       html,
@@ -36,7 +36,7 @@ export const sendEmail = async ({ to, subject, html }: EmailOptions): Promise<vo
 export const ticketCreatedEmail = (clientName: string, ticketId: string, title: string): string => {
   return `
     <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-      <h2 style="color: #2563eb;">Ticket Creado - HelpDeskPro</h2>
+      <h2 style="color: #2563eb;">Ticket Creado - TuTicketPro</h2>
       <p>Hola ${clientName},</p>
       <p>Tu ticket ha sido creado exitosamente y será atendido pronto.</p>
       <div style="background-color: #f3f4f6; padding: 20px; border-radius: 8px; margin: 20px 0;">
@@ -44,7 +44,7 @@ export const ticketCreatedEmail = (clientName: string, ticketId: string, title: 
         <p><strong>Título:</strong> ${title}</p>
       </div>
       <p>Recibirás notificaciones cuando haya actualizaciones en tu ticket.</p>
-      <p style="color: #6b7280; font-size: 14px;">Gracias por usar HelpDeskPro</p>
+      <p style="color: #6b7280; font-size: 14px;">Gracias por usar TuTicketPro</p>
     </div>
   `;
 };
@@ -58,7 +58,7 @@ export const ticketResponseEmail = (
 ): string => {
   return `
     <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-      <h2 style="color: #2563eb;">Nueva Respuesta - HelpDeskPro</h2>
+      <h2 style="color: #2563eb;">Nueva Respuesta - TuTicketPro</h2>
       <p>Hola ${clientName},</p>
       <p>Has recibido una nueva respuesta de <strong>${agentName}</strong> en tu ticket.</p>
       <div style="background-color: #f3f4f6; padding: 20px; border-radius: 8px; margin: 20px 0;">
@@ -68,7 +68,7 @@ export const ticketResponseEmail = (
         <p><strong>Respuesta:</strong></p>
         <p>${comment}</p>
       </div>
-      <p style="color: #6b7280; font-size: 14px;">Gracias por usar HelpDeskPro</p>
+      <p style="color: #6b7280; font-size: 14px;">Gracias por usar TuTicketPro</p>
     </div>
   `;
 };
@@ -76,7 +76,7 @@ export const ticketResponseEmail = (
 export const ticketClosedEmail = (clientName: string, ticketId: string, title: string): string => {
   return `
     <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-      <h2 style="color: #16a34a;">Ticket Cerrado - HelpDeskPro</h2>
+      <h2 style="color: #16a34a;">Ticket Cerrado - TuTicketPro</h2>
       <p>Hola ${clientName},</p>
       <p>Tu ticket ha sido marcado como <strong>cerrado</strong>.</p>
       <div style="background-color: #f3f4f6; padding: 20px; border-radius: 8px; margin: 20px 0;">
@@ -84,7 +84,7 @@ export const ticketClosedEmail = (clientName: string, ticketId: string, title: s
         <p><strong>Título:</strong> ${title}</p>
       </div>
       <p>Si necesitas más ayuda, no dudes en crear un nuevo ticket.</p>
-      <p style="color: #6b7280; font-size: 14px;">Gracias por usar HelpDeskPro</p>
+      <p style="color: #6b7280; font-size: 14px;">Gracias por usar TuTicketPro</p>
     </div>
   `;
 };
@@ -100,7 +100,7 @@ export const agentReminderEmail = (agentName: string, ticketId: string, title: s
         <p><strong>Título:</strong> ${title}</p>
       </div>
       <p>Por favor, revisa y responde cuando sea posible.</p>
-      <p style="color: #6b7280; font-size: 14px;">HelpDeskPro - Sistema de Tickets</p>
+      <p style="color: #6b7280; font-size: 14px;">TuTicketPro - Sistema de Tickets</p>
     </div>
   `;
 };
@@ -108,7 +108,7 @@ export const agentReminderEmail = (agentName: string, ticketId: string, title: s
 export const surveyEmail = (clientName: string, ticketId: string, title: string): string => {
   return `
     <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-      <h2 style="color: #2563eb;">Tu Opinión es Importante - HelpDeskPro</h2>
+      <h2 style="color: #2563eb;">Tu Opinión es Importante - TuTicketPro</h2>
       <p>Hola ${clientName},</p>
       <p>Tu ticket ha sido cerrado recientemente. Nos gustaría conocer tu experiencia.</p>
       <div style="background-color: #f3f4f6; padding: 20px; border-radius: 8px; margin: 20px 0;">
@@ -122,7 +122,7 @@ export const surveyEmail = (clientName: string, ticketId: string, title: string)
         <a href="#" style="display: inline-block; margin: 0 5px; padding: 10px 20px; background-color: #f59e0b; color: white; text-decoration: none; border-radius: 5px;">😐 Regular</a>
         <a href="#" style="display: inline-block; margin: 0 5px; padding: 10px 20px; background-color: #ef4444; color: white; text-decoration: none; border-radius: 5px;">😞 Malo</a>
       </div>
-      <p style="color: #6b7280; font-size: 14px;">Gracias por usar HelpDeskPro</p>
+      <p style="color: #6b7280; font-size: 14px;">Gracias por usar TuTicketPro</p>
     </div>
   `;
 };

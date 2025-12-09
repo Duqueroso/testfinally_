@@ -43,7 +43,7 @@ export default function RegisterPage() {
     <main className="min-h-screen gradient-dark flex items-center justify-center p-4">
       <div className="w-full max-w-md animate-slide-up">
         <div className="text-center mb-8">
-          <h1 className="text-5xl font-black text-white mb-3 animate-float">🎫 HelpDeskPro</h1>
+          <h1 className="text-5xl font-black text-white mb-3 animate-float">🎫 TuTicketPro</h1>
           <p className="text-gray-300 text-lg">Crea tu cuenta</p>
         </div>
 

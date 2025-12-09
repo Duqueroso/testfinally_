@@ -34,7 +34,7 @@ export default function Home() {
           <div className="mb-12 animate-slide-up">
             <div className="text-7xl mb-6 animate-float">🎫</div>
             <h1 className="text-6xl font-black mb-6">
-              <span className="text-gradient">HelpDeskPro</span>
+              <span className="text-gradient">TuTicketPro</span>
             </h1>
             <p className="text-2xl text-gray-700 mb-8 font-medium">
               Sistema de Gestión de Tickets de Soporte Técnico
@@ -88,7 +88,7 @@ export default function Home() {
 
           {/* Stats */}
           <div className="mt-16 glass border-0 rounded-2xl shadow-2xl p-10 hover-lift animate-slide-up" style={{animationDelay: '400ms'}}>
-            <h2 className="text-3xl font-black mb-8 text-gradient">¿Por qué HelpDeskPro?</h2>
+            <h2 className="text-3xl font-black mb-8 text-gradient">¿Por qué TuTicketPro?</h2>
             <div className="grid md:grid-cols-4 gap-8">
               <div className="transform hover:scale-110 transition-all duration-300">
                 <div className="text-4xl font-black text-[#B91667] mb-3">24/7</div>

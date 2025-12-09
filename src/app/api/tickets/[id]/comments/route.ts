@@ -74,7 +74,7 @@ async function postHandler(req: AuthenticatedRequest, { params }: RouteParams) {
       try {
         await sendEmail({
           to: ticket.clientEmail,
-          subject: `Nueva Respuesta en tu Ticket - HelpDeskPro`,
+          subject: `Nueva Respuesta en tu Ticket - TuTicketPro`,
           html: ticketResponseEmail(
             ticket.clientName,
             id,

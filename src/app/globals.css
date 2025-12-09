@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  /* Paleta de colores HelpDeskPro */
+  /* Paleta de colores TuTicketPro */
   --primary: #B91667;
   --secondary: #411941;
   --dark: #25252A;
@@ -27,14 +27,20 @@
   --color-dark: var(--dark);
   --color-accent-yellow: var(--accent-yellow);
   --color-accent-blue: var(--accent-blue);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-inter);
+  --font-heading: var(--font-poppins);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Aplicar Poppins a los títulos */
+h1, h2, h3, h4, h5, h6,
+.font-heading {
+  font-family: var(--font-poppins), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
 /* Gradientes modernos */
